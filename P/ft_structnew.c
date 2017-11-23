@@ -6,14 +6,14 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 18:57:59 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/22 19:54:38 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/23 03:17:34 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libtet.h"
 
-t_list	*ft_structnew(int const *piece, size_t min_square)
+t_list	*ft_structnew(int const *piece, int letter)
 {
 	t_piece *struct;
 
@@ -22,7 +22,7 @@ t_list	*ft_structnew(int const *piece, size_t min_square)
 	if (piece == NULL)
 	{
 		struct->piece = NULL;
-		struct->min_square = 0;
+		struct->letter = 0;
 	}
 	if (!(ft_checktet(s)))
 		return (NULL);
@@ -31,8 +31,8 @@ t_list	*ft_structnew(int const *piece, size_t min_square)
 		if (!(struct->piece = (char *)malloc(content)))
 			return (NULL);
 		ft_intcpy(struct->piece, piece);
+		struct-letter = letter;
 	}
 	struct->next = NULL;
-	struct->pre = NULL;
 	return (struct);
 }

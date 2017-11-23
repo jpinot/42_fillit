@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:43:12 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/22 23:53:22 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/23 00:51:27 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_patern_new(size_t n)
 
 int		main(void)
 {
-	char *c = ft_patern_new(4);
+	char *c = ft_patern_new(10);
 	printf("%s", c);
 //	while (*c)
 //	{
