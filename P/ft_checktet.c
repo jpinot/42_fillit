@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 19:23:26 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/22 19:46:01 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/24 01:36:10 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ size_t	ft_checktet(char *s)
 			}
 			i++;
 		}
-		if ((i + 1) % 5 != 0)
-			return (0);
 		i++;
 		x++;
 	}
@@ -58,6 +56,8 @@ size_t	ft_checktet(char *s)
 		return (0);
 	return (1);
 }
+
+#include <stdio.h>
 
 int		main(int c, char **v)
 {
