@@ -1,54 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_patern_new.c                                    :+:      :+:    :+:   */
+/*   ft_get_free_pos.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 21:43:12 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/24 01:18:08 by jpinyot          ###   ########.fr       */
+/*   Created: 2017/11/23 19:48:38 by jpinyot           #+#    #+#             */
+/*   Updated: 2017/11/24 01:19:04 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include "libtet.h"
-#include <stdio.h>
+#include "libtet.h"
 
-char	*ft_patern_new(size_t n)
+int		ft_check_available(char *patern, int i,int *p)
 {
-	char *str;
+	int j;
 	int size;
-	int i;
-	size_t j;
 
-	i = 0;
-	size = (n + 1) * n;
-	if (!(str = ft_strnew(i + 1)))
-		return (NULL);
-	while (i < size)
+	size = ft_patern_xcalc(patern) + 1;
+	j = 2;
+	while(j < 7)
 	{
-		j = 0;
-		while (j < n && i < size)
-		{
-			str[i] = '.';
-			i++;
-			j++;
-		}
-		str[i] = '\n';
-		i++;
+		if(patern[size * p[j] + p[j + 1] + i] != '.')
+			return (0);
+		j += 2;
 	}
-	return (str);
+	return (1);
 }
 
-int		main(void)
+int		ft_get_free_pos(char *patern, int *piece, int i)
 {
-	char *c = ft_patern_new(10);
-	printf("%s", c);
-//	while (*c)
-//	{
-//		write(1, &c, 1);
-//		c++;
-//	}
-
-	return (0);
+	while (patern[i])
+	{
+		if (patern[i] == '.')
+		{
+			if (ft_check_available(patern, i, piece))
+				return (i);
+		}
+		i++;
+	}
+	return(-1);
 }

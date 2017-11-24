@@ -6,13 +6,13 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 23:25:14 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/22 19:27:30 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/23 21:33:28 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "lintet.h"
-
+#include "libtet.h"
+#include <stdio.h>
 int		*ft_checkpos(char *s)
 {
 	static int pos[8];
@@ -41,8 +41,8 @@ int		*ft_checkpos(char *s)
 			}
 			if (s[i - 1] != '#')
 			{
-				pos[j] = pos[j - 2] - 1;
-				pos[j + 1] = i - tmp + (5 * pos[j]);
+				pos[j] = pos[j - 2] + 1;
+				pos[j + 1] = i - tmp - (5 * pos[j]);
 			}
 			j += 2;
 		}

@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 19:24:20 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/23 01:28:23 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/23 23:52:40 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ int					ft_check_min_square (int *str);
 char				*ft_patern_new(size_t n);
 char				*ft_patern_add(const char *str);
 size_t				ft_patern_xcalc(const char *s);
+int					ft_get_free_pos(char *patern, int *piece, int i);
 #endif

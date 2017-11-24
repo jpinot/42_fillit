@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 22:40:58 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/23 03:18:33 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/24 01:18:47 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*ft_patern_add_empty(char *c, int i, int n)
 	return (c);
 }
 
-char		*ft_patern_add(const char *str)
+void		ft_patern_add(char *str)
 {
 	char *dst;
 	int i;
@@ -54,5 +54,4 @@ char		*ft_patern_add(const char *str)
 		j++;
 	}
 	dst = ft_patern_add_empty(dst, i, ft_patern_xcalc(str) + 1);
-	return (dst);
 }
