@@ -6,12 +6,12 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 23:25:14 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/24 22:32:10 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/25 19:29:00 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include "libtet.h"
+#include "libtet.h"
 
 void	ft_check_pos(char *s, int i, int tmp, int *pos)
 {
@@ -43,9 +43,9 @@ void	ft_check_pos(char *s, int i, int tmp, int *pos)
 
 int		*ft_checkpos(char *s)
 {
-	static int pos[8];
-	int i;
-	int tmp;
+	static int	pos[8];
+	int			i;
+	int			tmp;
 
 	i = 0;
 	while (s[i] != '#')

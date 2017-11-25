@@ -6,7 +6,7 @@
 /*   By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 22:32:10 by mzabalza          #+#    #+#             */
-/*   Updated: 2017/11/25 02:11:24 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/25 19:30:58 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_erase(char *patern, t_piece *lista)
 int		ft_currentcord(char *patern, t_piece *lista)
 {
 	int i;
-	
+
 	i = 0;
 	while (patern[i])
 	{
@@ -41,7 +41,7 @@ int		ft_currentcord(char *patern, t_piece *lista)
 		i++;
 	}
 	i = 0;
-	while(patern[i])
+	while (patern[i])
 	{
 		if (patern[i] == '.')
 			return (i);

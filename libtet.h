@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 19:24:20 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/25 02:08:57 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/25 18:13:57 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct			s_piece
 }						t_piece;
 
 int					main(int argc, char **argv);
-
+size_t				ft_checkerrors(char *str);
 void				ft_put_piece(char *patern, t_piece *p, int i);
 void				ft_big_mom(t_piece *list, char *patern);
 int					ft_check_free(const char *s, char c);

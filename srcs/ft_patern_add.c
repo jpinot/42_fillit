@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 22:40:58 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/25 02:54:11 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/25 19:35:13 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char		*ft_patern_add(char *str)
 		j++;
 	}
 	dst = ft_patern_add_empty(dst, i, ft_patern_xcalc(dst));
-	ft_putstr(dst);
-	ft_putchar('\n');
+	//ft_putstr(dst);
+	//ft_putchar('\n');
 	return (dst);
 }

@@ -6,7 +6,7 @@
 #    By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/19 22:17:20 by mzabalza          #+#    #+#              #
-#    Updated: 2017/11/25 00:22:26 by jpinyot          ###   ########.fr        #
+#    Updated: 2017/11/25 18:14:25 by mzabalza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = srcs/ft_main.c\
 	   srcs/ft_checktet.c\
 	   srcs/ft_checkpos.c\
 	   srcs/ft_get_free_pos.c\
+	   srcs/ft_checkerrors.c\
 
 SAMPLE = samples/sample2.fillit
 

@@ -6,7 +6,7 @@
 /*   By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 00:18:44 by mzabalza          #+#    #+#             */
-/*   Updated: 2017/11/24 21:11:03 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/25 19:30:16 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 char	*ft_createfile(char *argv)
 {
-	char *dst;
-	int fd;
-	char file[545];
-	char buff;
-	int i;
+	char	*dst;
+	int		fd;
+	char	file[545];
+	char	buff;
+	int		i;
 
 	fd = open(argv, O_RDONLY);
 	i = 0;

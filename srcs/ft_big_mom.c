@@ -6,7 +6,7 @@
 /*   By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 01:24:57 by mzabalza          #+#    #+#             */
-/*   Updated: 2017/11/25 02:54:14 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/25 19:29:51 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_check_finish(char *patern, char c)
 	j = i;
 	while (patern[i])
 	{
-		write (1, "g", 1);
+		write(1, "g", 1);
 		if (patern[i] == c)
 		{
 			if (j - i < 3)
