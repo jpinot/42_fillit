@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 19:24:20 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/24 21:05:43 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/25 02:08:57 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ int					ft_currentcord(char *patern, t_piece *lista);
 int					ft_get_free_pos(char *patern, int *piece, int i);
 int					ft_add_piece(char *patern, t_piece *p, int i);
 t_piece				*ft_structnew(int const *piece, int letter);
-void				ft_patern_add(char *str);
+char				*ft_patern_add(char *str);
 char				*ft_patern_new(size_t n);
 size_t				ft_patern_xcalc(const char *s);
+void				ft_erase(char *patern, t_piece *lista);
 
 char				*ft_createfile(char *argv);
 #endif

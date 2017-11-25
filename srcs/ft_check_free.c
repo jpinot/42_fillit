@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 01:09:41 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/24 21:00:35 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/25 00:20:38 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_check_free(const char *s, char c)
 			return (1);
 		if (s[i] == c)
 			return (1);
+		i++;
 	}
 	return (0);
 }

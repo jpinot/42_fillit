@@ -6,7 +6,7 @@
 /*   By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 22:32:10 by mzabalza          #+#    #+#             */
-/*   Updated: 2017/11/24 23:08:34 by jpinyot          ###   ########.fr       */
+/*   Updated: 2017/11/25 02:11:24 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ int		ft_currentcord(char *patern, t_piece *lista)
 			return (i);
 		i++;
 	}
-	return (0);
+	return (-1);
 }

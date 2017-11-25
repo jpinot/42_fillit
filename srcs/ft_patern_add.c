@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 22:40:58 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/24 20:59:56 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/25 02:54:11 by jpinyot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,26 @@ static char	*ft_patern_add_empty(char *c, int i, int n)
 		j++;
 	}
 	c[i] = '\n';
-	c[++i] = '\n';
 	c[++i] = 0;
 	return (c);
 }
 
-void		ft_patern_add(char *str)
+char		*ft_patern_add(char *str)
 {
 	char	*dst;
 	size_t	i;
 	size_t	j;
-	int		size;
+	size_t	size;
 
 	i = 0;
 	j = 0;
 	size = ft_strlen(str) + ((ft_patern_xcalc(str) + 2) * 2);
 	if (!(dst = ft_strnew(size)))
-		return ;
-	while (j < (ft_strlen(str) - 1))
+		return (NULL);
+	size = ft_strlen(str);
+	if (size % 2 != 0)
+		size++;
+	while (j < size)
 	{
 		if (str[j] == '\n')
 		{
@@ -53,5 +55,8 @@ void		ft_patern_add(char *str)
 		i++;
 		j++;
 	}
-	dst = ft_patern_add_empty(dst, i, ft_patern_xcalc(str) + 1);
+	dst = ft_patern_add_empty(dst, i, ft_patern_xcalc(dst));
+	ft_putstr(dst);
+	ft_putchar('\n');
+	return (dst);
 }
