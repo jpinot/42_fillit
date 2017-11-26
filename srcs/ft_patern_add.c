@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 22:40:58 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/25 19:35:13 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/26 03:06:12 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ char		*ft_patern_add(char *str)
 	if (!(dst = ft_strnew(size)))
 		return (NULL);
 	size = ft_strlen(str);
-	if (size % 2 != 0)
-		size++;
 	while (j < size)
 	{
 		if (str[j] == '\n')
@@ -56,7 +54,5 @@ char		*ft_patern_add(char *str)
 		j++;
 	}
 	dst = ft_patern_add_empty(dst, i, ft_patern_xcalc(dst));
-	//ft_putstr(dst);
-	//ft_putchar('\n');
 	return (dst);
 }

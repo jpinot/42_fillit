@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 21:43:12 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/24 20:09:35 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/25 23:03:24 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_patern_new(size_t n)
 
 	i = 0;
 	size = (n + 1) * n;
-	if (!(str = ft_strnew(i + 1)))
+	if (!(str = ft_strnew(size)))
 		return (NULL);
 	while (i < size)
 	{

@@ -6,12 +6,33 @@
 /*   By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 17:36:45 by mzabalza          #+#    #+#             */
-/*   Updated: 2017/11/25 19:36:55 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/26 03:15:14 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libtet.h"
+
+int		ft_check_column(char *str)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (i < 20 && str[i] != '\0')
+	{
+		count++;
+		if (str[i] == '\n')
+		{
+			if (count != 5)
+				return (0);
+			count = 0;
+		}
+		i++;
+	}
+	return (1);
+}
 
 size_t	ft_check_length(char *str)
 {
@@ -58,6 +79,8 @@ size_t	ft_checkerrors(char *str)
 	nb = (ft_strlen(s) + 1) / 21;
 	while (nb > 0)
 	{
+		if (!(ft_check_column(s)))
+			return (0);
 		if (!(ft_checkfour(s)))
 			return (0);
 		if (!(ft_checktet(s)))

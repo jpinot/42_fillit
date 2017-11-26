@@ -6,15 +6,13 @@
 #    By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/19 22:17:20 by mzabalza          #+#    #+#              #
-#    Updated: 2017/11/25 18:14:25 by mzabalza         ###   ########.fr        #
+#    Updated: 2017/11/26 03:30:23 by mzabalza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-FLAGS = -Wall -Werror -Wextra
-
-SRCS = srcs/ft_main.c\
+SRC = srcs/ft_main.c\
 	   srcs/ft_createfile.c\
 	   srcs/ft_structadd.c\
 	   srcs/ft_structnew.c\
@@ -31,23 +29,31 @@ SRCS = srcs/ft_main.c\
 	   srcs/ft_get_free_pos.c\
 	   srcs/ft_checkerrors.c\
 
-SAMPLE = samples/sample2.fillit
+OBJ		= $(patsubst srcs/%.c,./%.o,$(SRC))
 
-LIB = -lft -L.
+INCLUDE	= includes/fillit.h \
+		 		  includes/libft.h
 
-INCLUDES = -I. -I.
+.SILENT:
 
-OBJ = $(SRCS:.c=.o)
+$(NAME): $(OBJ)
+		 	gcc -Wall -Werror -Wextra $(OBJ) -L libft/ -lft -I./includes -o $(NAME)
+		 	printf '\033[4m'
+		 	printf '\033[32m[ ✔ ] %s\n\033[0m' "fillit is done !"
+./%.o: srcs/%.c
+		 	gcc -Wall -Wextra -Werror -I./includes -c $< -o $@
+		 	printf '\033[0m[ ✔ ] %s\n\033[0m' "$<"
+
+clean:
+		 	/bin/rm -rf *.o
+		 	printf '\033[31m[ ✔ ] %s\n\033[0m' "Clean"
+
+fclean: clean
+		 	/bin/rm -f $(NAME)
+		 	printf '\033[31m[ ✔ ] %s\n\033[0m' "Fclean"
+
+re: fclean all
 
 all: $(NAME)
 
-$(NAME):
-	@gcc $(SRCS) $(FLAGS) $(LIB) $(INCLUDES) -o $(NAME)
-
-clean:
-
-fclean: clean
-	/bin/rm -f $(NAME)
-
-re: fclean
-	make
+.PHONY: clean fclean re all

@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 19:23:26 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/25 18:38:58 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/25 22:11:50 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,38 @@
 
 size_t	ft_check_tet_rel(char *s, int i)
 {
-	if (s[i - 1] == '#' && i - 1 > 0)
-		return (1);
+	int count;
+
+	count = 0;
+	if (s[i - 1] == '#' && i - 1 >= 0)
+		count++;
 	if (s[i + 1] == '#' && i + 1 < 20)
-		return (1);
-	if (s[i - 5] == '#' && i - 5 > 0)
-		return (1);
+		count++;
+	if (s[i - 5] == '#' && i - 5 >= 0)
+		count++;
 	if (s[i + 5] == '#' && i + 5 < 20)
-		return (1);
-	return (0);
+		count++;
+	return (count);
 }
 
 size_t	ft_checktet(char *s)
 {
-	size_t cnt;
-	size_t i;
-	size_t x;
+	size_t	i;
+	int		count;
 
-	cnt = 4;
 	i = 0;
-	x = 0;
-	while (x < 4 && i < 19)
+	count = 0;
+	while (i < 19)
 	{
 		while (s[i] != '\n')
 		{
 			if (s[i] == '#')
-			{
-				if (!(ft_check_tet_rel(s, i)))
-					return (0);
-				cnt--;
-			}
+				count += ft_check_tet_rel(s, i);
 			i++;
 		}
 		i++;
-		x++;
 	}
-	if (cnt != 0 || x == 5)
+	if (count < 6)
 		return (0);
 	return (1);
 }
