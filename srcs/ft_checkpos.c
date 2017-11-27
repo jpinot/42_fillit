@@ -6,7 +6,7 @@
 /*   By: jpinyot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 23:25:14 by jpinyot           #+#    #+#             */
-/*   Updated: 2017/11/25 21:32:50 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/27 17:30:20 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ int		*ft_checkpos(char *s)
 		i++;
 	tmp = i;
 	i++;
+	pos[0] = 0;
+	pos[1] = 0;
 	ft_check_pos(s, i, tmp, pos);
+	i = 0;
 	return (pos);
 }

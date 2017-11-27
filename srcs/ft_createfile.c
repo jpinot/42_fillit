@@ -6,7 +6,7 @@
 /*   By: mzabalza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 00:18:44 by mzabalza          #+#    #+#             */
-/*   Updated: 2017/11/26 03:27:54 by mzabalza         ###   ########.fr       */
+/*   Updated: 2017/11/27 12:42:10 by mzabalza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,10 @@ char	*ft_createfile(char *argv)
 	char	buff;
 	int		i;
 
-	fd = open(argv, O_RDONLY);
 	i = 0;
+	fd = open(argv, O_RDONLY);
 	while (read(fd, &buff, 1))
 	{
-		if (i > 24)
-		{
-			ft_putstr("error");
-		}
 		file[i] = buff;
 		i++;
 	}
