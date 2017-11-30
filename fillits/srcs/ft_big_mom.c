@@ -15,18 +15,21 @@
 
 void	ft_big_mom(t_piece *list, char *patern)
 {
+	t_piece *tmp;
+
+	tmp = list;
 	while (list)
 	{
 		if (!(ft_check_free(patern, list->letter)))
 		{
-			patern = ft_patern_add(patern);
+			patern = ft_patern_new(ft_patern_xcalc(patern) + 1);
+			ft_big_mom(tmp, patern);
+			return ;
 		}
 		if (!(ft_add_piece(patern, list, ft_currentcord(patern, list))))
 		{
 			if (list->prev)
-			{
 				list = list->prev;
-			}
 			else
 			{
 				patern = ft_patern_add(patern);
@@ -34,9 +37,7 @@ void	ft_big_mom(t_piece *list, char *patern)
 			}
 		}
 		else
-		{
 			list = list->next;
-		}
 	}
 	ft_putstr(patern);
 }

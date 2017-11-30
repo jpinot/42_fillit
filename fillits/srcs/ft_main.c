@@ -22,7 +22,7 @@ int		main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_putstr("usage: ./fillit sample.fillit");
+		ft_putstr("usage: ./fillit sample.fillit\n");
 		return (0);
 	}
 	str = ft_createfile(argv[1]);
